@@ -1,4 +1,16 @@
-# 债序天工：企业级项目还债流 Skill
+<h1 align="center">债序天工</h1>
+
+<p align="center">
+  <a href="https://rfdiosuao.github.io/enterprise-debt-remediation-skill/">Vue Wiki 在线版</a>
+  ·
+  <a href="README.md">English README</a>
+  ·
+  <a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/tag/v0.1.0">下载 .skill 包</a>
+</p>
+
+<p align="center">
+  企业级项目还债流 Skill：先识别风险，再排序债务，再分阶段偿还。
+</p>
 
 `债序天工` 是一个面向智能体的企业级项目还债流 Skill。它不是普通的代码洁癖清单，而是一套“先识别风险，再排序债务，再分阶段偿还”的项目治理流程。
 

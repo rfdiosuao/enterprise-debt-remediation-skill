@@ -1,6 +1,16 @@
-# Enterprise Debt Remediation Skill
+<h1 align="center">Enterprise Debt Remediation Skill</h1>
 
-[中文文档：债序天工](README.zh-CN.md)
+<p align="center">
+  <a href="https://rfdiosuao.github.io/enterprise-debt-remediation-skill/">Vue Wiki</a>
+  ·
+  <a href="README.zh-CN.md">中文文档：债序天工</a>
+  ·
+  <a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/tag/v0.1.0">Download .skill Packages</a>
+</p>
+
+<p align="center">
+  A platform-neutral workflow for finding, ranking, and paying down enterprise project debt.
+</p>
 
 Enterprise Debt Remediation is a platform-neutral skill for auditing and paying down project debt. It focuses on the debt that blocks an enterprise-grade project: security, architecture, code quality, UI/UX, tests, delivery, observability, data, dependencies, documentation, and governance.
 

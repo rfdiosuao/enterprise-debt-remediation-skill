@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>债序天工 · 企业级项目还债流</title>
+    <meta
+      name="description"
+      content="债序天工是一个面向智能体的企业级项目还债流 Wiki，覆盖 audit、plan、fix 三种模式，以及安全、数据、发布、测试、架构、代码、UI、性能、观测和治理债务。"
+    />
+    <meta property="og:title" content="债序天工 · 企业级项目还债流" />
+    <meta
+      property="og:description"
+      content="先识别风险，再排序债务，再分阶段偿还。适配 Codex、Claude Code、OpenClaw、Hermes。"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./wiki.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  </head>
+  <body>
+    <div id="app" class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top">债序天工</a>
+        <nav class="topnav" aria-label="页面目录">
+          <a v-for="item in topNav" :key="item.id" :href="'#' + item.id">{{ item.label }}</a>
+        </nav>
+        <a class="repo-pill" :href="repoUrl" target="_blank" rel="noreferrer">GitHub</a>
+      </header>
+
+      <main class="page" id="top">
+        <section class="hero panel">
+          <div class="hero__copy">
+            <p class="eyebrow">企业级项目还债流 Wiki</p>
+            <h1>债序天工</h1>
+            <p class="hero__subtitle">
+              把项目债务按风险、收益、证据排序，再分阶段偿还。
+            </p>
+            <p class="hero__lede">
+              默认优先审视安全、数据、发布、回滚和核心链路风险，然后再处理架构、代码、UI、性能、观测和治理。
+            </p>
+            <div class="hero__chips">
+              <span v-for="chip in chips" :key="chip.label" class="chip">
+                <strong>{{ chip.label }}</strong>
+                <span>{{ chip.value }}</span>
+              </span>
+            </div>
+            <div class="hero__actions">
+              <button class="action action--primary" @click="copyText(quickCommands.audit)">
+                复制 `/hz audit`
+              </button>
+              <button class="action" @click="copyText(quickCommands.plan)">
+                复制 `/hz plan`
+              </button>
+              <button class="action" @click="copyText(quickCommands.fix)">
+                复制 `/hz fix`
+              </button>
+            </div>
+          </div>
+
+          <aside class="hero__panel">
+            <div class="panel-card">
+              <p class="panel-card__eyebrow">快捷命令</p>
+              <pre>{{ quickCommands.audit }}</pre>
+              <p class="panel-card__hint">{{ statusMessage }}</p>
+            </div>
+            <div class="panel-card panel-card--ghost">
+              <p class="panel-card__eyebrow">上线状态</p>
+              <p class="panel-card__value">GitHub Pages</p>
+              <p class="panel-card__hint">直接从 `main` 分支根目录发布。</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="search panel">
+          <div>
+            <p class="eyebrow eyebrow--compact">搜索</p>
+            <h2>按关键词定位章节</h2>
+          </div>
+          <label class="searchbox">
+            <span>查找债务、命令、平台或优先级</span>
+            <input v-model="query" type="search" placeholder="例如：P0、Claude Code、安装、验证" />
+          </label>
+        </section>
+
+        <section class="layout">
+          <aside class="toc panel">
+            <div class="toc__head">
+              <p class="eyebrow eyebrow--compact">目录</p>
+              <p class="toc__count">{{ visibleSections.length }} 章</p>
+            </div>
+            <a
+              v-for="section in visibleSections"
+              :key="section.id"
+              class="toc__item"
+              :href="'#' + section.id"
+            >
+              <span>{{ section.label }}</span>
+              <small>{{ section.title }}</small>
+            </a>
+          </aside>
+
+          <div class="content">
+            <article v-for="section in visibleSections" :key="section.id" :id="section.id" class="article panel">
+              <div class="article__meta">
+                <p class="eyebrow eyebrow--compact">{{ section.label }}</p>
+                <span class="article__id">{{ section.id }}</span>
+              </div>
+              <h2>{{ section.title }}</h2>
+              <p class="article__lead">{{ section.lead }}</p>
+
+              <ul v-if="section.points?.length" class="bullet-list">
+                <li v-for="point in section.points" :key="point">{{ point }}</li>
+              </ul>
+
+              <table v-if="section.table" class="data-table">
+                <thead>
+                  <tr>
+                    <th v-for="head in section.table.headers" :key="head">{{ head }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="row in section.table.rows" :key="row[0]">
+                    <td v-for="cell in row" :key="cell">{{ cell }}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div v-if="section.snippets?.length" class="snippets">
+                <div v-for="snippet in section.snippets" :key="snippet.label" class="snippet">
+                  <div class="snippet__head">
+                    <span>{{ snippet.label }}</span>
+                    <button class="copy-link" @click="copyText(snippet.value)">复制</button>
+                  </div>
+                  <pre>{{ snippet.value }}</pre>
+                </div>
+              </div>
+
+              <blockquote v-if="section.quote" class="quote">
+                {{ section.quote }}
+              </blockquote>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./wiki.js"></script>
+  </body>
+</html>
