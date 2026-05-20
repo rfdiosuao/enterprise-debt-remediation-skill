@@ -2,6 +2,15 @@
 
 这份契约是跨平台核心。Codex、Claude Code、OpenClaw、Hermes 等入口只负责把用户请求转成这里的三个模式。
 
+## 环境预检
+
+在 audit、plan、fix 之前先检测当前系统。
+
+- 先判断宿主是否为 Windows。
+- 如果是 Windows，先执行 `scripts/bootstrap_windows_utf8.ps1`，再读取中文文件、跑验证脚本或导出报告。
+- 如果不是 Windows，仍然保持 UTF-8 读写习惯，显式写 `-Encoding UTF8`。
+- 如果预检后仍然出现乱码，先停下来修正编码，不要继续审计。
+
 ## 输入
 
 - `mode`：`audit`、`plan`、`fix`，为空时默认 `audit`

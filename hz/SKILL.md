@@ -7,6 +7,10 @@ description: 'This skill should be used when the user asks to "/hz", "/hz audit"
 
 Run the smallest useful debt pass. Default to `audit` when no mode is given. Treat this as the thin entrypoint for `$enterprise-debt-remediation`.
 
+## Environment Preflight
+
+Detect the host OS before routing. If the host is Windows, apply the UTF-8 session bootstrap first, then continue with the chosen mode.
+
 ## Modes
 
 ### `audit`
@@ -26,6 +30,7 @@ Interpret `/hz [mode] [scope]` as:
 - scope: everything after mode
 
 If mode is missing or unknown, assume `audit` and state the assumption. For complete audits, load `$enterprise-debt-remediation` and follow `references/core-contract.md`.
+If the host is Windows, ensure the UTF-8 session bootstrap has been applied before loading the core contract.
 
 ## Output
 

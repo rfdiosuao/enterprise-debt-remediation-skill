@@ -7,6 +7,15 @@ description: 'This skill should be used when the user asks to "还债流", "技�
 
 把项目从“能跑”推进到“可长期维护、可审计、可交付、可防守”的状态。先盘点债务，再按风险和收益排序，再推进修复。保持核心流程平台中立，让 Codex、Claude Code、OpenClaw、Hermes 等智能体只做薄适配。
 
+## 运行前置
+
+先做环境预检，再进入审计、计划或修复。
+
+- 先识别当前系统。
+- 如果是 Windows，先运行 `scripts/bootstrap_windows_utf8.ps1`，把当前会话切到 UTF-8。
+- 如果不是 Windows，继续使用 UTF-8 读写习惯，仍然显式写文件编码。
+- 先检查中文输出是否正常，再开始读仓库内容、跑验证脚本或输出报告。
+
 ## 快速入口
 
 把常用操作压成三个动作。默认先跑 `audit`。
@@ -15,7 +24,7 @@ description: 'This skill should be used when the user asks to "还债流", "技�
 - `plan`：把现有发现压成短路线图。
 - `fix`：只处理 P0/P1 的最小安全修复。
 
-使用 `references/core-contract.md` 作为跨平台行为契约。使用 `references/adapters.md` 给不同智能体接入口。不要把平台专属语法写进核心流程。
+使用 `references/core-contract.md` 作为跨平台行为契约。使用 `references/adapters.md` 给不同智能体接入口。使用 `references/environment.md` 作为系统检测和 Windows UTF-8 约定。不要把平台专属语法写进核心流程。
 
 ## 先定标准
 
@@ -101,10 +110,12 @@ description: 'This skill should be used when the user asks to "还债流", "技�
 
 - `references/core-contract.md`：跨平台核心契约
 - `references/adapters.md`：Codex、Claude Code、OpenClaw、Hermes 适配方式
+- `references/environment.md`：系统检测与 Windows UTF-8 会话约定
 - `references/audit-playbook.md`：实际审计步骤
 - `references/security-baseline.md`：安全和企业级最低门槛
 - `references/taxonomy.md`：债务分类和识别信号
 - `references/scoring.md`：优先级评分和分级规则
 - `examples/audit-report.example.md`：标准输出示例
 - `assets/adapters/`：可复制到 Claude Code、OpenClaw、Hermes 的薄入口文件
+- `scripts/bootstrap_windows_utf8.ps1`：Windows UTF-8 会话 bootstrap
 - `scripts/validate_skill.py`：本技能的结构和引用校验脚本
