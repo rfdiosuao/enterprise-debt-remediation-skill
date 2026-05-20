@@ -1,7 +1,9 @@
 <h1 align="center">Enterprise Debt Remediation Skill</h1>
 
 <p align="center">
-  <a href="https://rfdiosuao.github.io/enterprise-debt-remediation-skill/">Vue Wiki</a>
+  <a href="https://rfdiosuao.github.io/enterprise-debt-remediation-skill/">Wiki</a>
+  ·
+  <a href="https://rfdiosuao.github.io/enterprise-debt-remediation-skill/changelog.html">Changelog</a>
   ·
   <a href="README.zh-CN.md">中文文档：债序天工</a>
   ·

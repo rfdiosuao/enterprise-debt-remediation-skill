@@ -3,153 +3,183 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>债序天工 · 企业级项目还债流</title>
+    <title>债序天工 · 企业级项目还债流 Skill Wiki</title>
     <meta
       name="description"
-      content="债序天工是一个面向智能体的企业级项目还债流 Wiki，覆盖 audit、plan、fix 三种模式，以及安全、数据、发布、测试、架构、代码、UI、性能、观测和治理债务。"
+      content="债序天工是一个面向智能体的企业级项目还债流 Skill Wiki，覆盖审计、规划、修复和更新日志。"
     />
-    <meta property="og:title" content="债序天工 · 企业级项目还债流" />
-    <meta
-      property="og:description"
-      content="先识别风险，再排序债务，再分阶段偿还。适配 Codex、Claude Code、OpenClaw、Hermes。"
-    />
+    <meta property="og:title" content="债序天工 · 企业级项目还债流 Skill Wiki" />
+    <meta property="og:description" content="先查债，再排债，最后还债。适配 Codex、Claude Code、OpenClaw、Hermes。" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#07111f" />
+    <meta name="theme-color" content="#f5f8ff" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./wiki.css" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   </head>
   <body>
-    <div id="app" class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="#top">债序天工</a>
-        <nav class="topnav" aria-label="页面目录">
-          <a v-for="item in topNav" :key="item.id" :href="'#' + item.id">{{ item.label }}</a>
-        </nav>
-        <a class="repo-pill" :href="repoUrl" target="_blank" rel="noreferrer">GitHub</a>
-      </header>
+    <header class="site-header">
+      <a class="brand" href="./index.html">债序天工 Wiki</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="./index.html" aria-current="page">首页</a>
+        <a href="./changelog.html">更新日志</a>
+        <a href="#commands">指令</a>
+        <a href="#priority">等级</a>
+        <a href="#install">安装</a>
+      </nav>
+      <a class="github-link" href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
 
-      <main class="page" id="top">
-        <section class="hero panel">
-          <div class="hero__copy">
-            <p class="eyebrow">企业级项目还债流 Wiki</p>
-            <h1>债序天工</h1>
-            <p class="hero__subtitle">
-              把项目债务按风险、收益、证据排序，再分阶段偿还。
-            </p>
-            <p class="hero__lede">
-              默认优先审视安全、数据、发布、回滚和核心链路风险，然后再处理架构、代码、UI、性能、观测和治理。
-            </p>
-            <div class="hero__chips">
-              <span v-for="chip in chips" :key="chip.label" class="chip">
-                <strong>{{ chip.label }}</strong>
-                <span>{{ chip.value }}</span>
-              </span>
-            </div>
-            <div class="hero__actions">
-              <button class="action action--primary" @click="copyText(quickCommands.audit)">
-                复制 `/hz audit`
-              </button>
-              <button class="action" @click="copyText(quickCommands.plan)">
-                复制 `/hz plan`
-              </button>
-              <button class="action" @click="copyText(quickCommands.fix)">
-                复制 `/hz fix`
-              </button>
-            </div>
-          </div>
+    <main class="doc-shell" id="top">
+      <article class="doc-card">
+        <h1>🧾 债序天工 | 企业级项目还债流 Skill</h1>
 
-          <aside class="hero__panel">
-            <div class="panel-card">
-              <p class="panel-card__eyebrow">快捷命令</p>
-              <pre>{{ quickCommands.audit }}</pre>
-              <p class="panel-card__hint">{{ statusMessage }}</p>
-            </div>
-            <div class="panel-card panel-card--ghost">
-              <p class="panel-card__eyebrow">上线状态</p>
-              <p class="panel-card__value">GitHub Pages</p>
-              <p class="panel-card__hint">直接从 `main` 分支根目录发布。</p>
-            </div>
-          </aside>
+        <blockquote class="status-block">
+          <p><strong>版本</strong>: v0.1.0</p>
+          <p><strong>状态</strong>: 已开源 · GitHub Pages 已上线</p>
+          <p><strong>入口</strong>: <code>/hz audit</code> · <code>/hz plan</code> · <code>/hz fix</code></p>
+          <p><strong>适配</strong>: Codex · Claude Code · OpenClaw · Hermes</p>
+        </blockquote>
+
+        <hr />
+
+        <section id="overview">
+          <h2>📖 简介</h2>
+          <p>
+            <strong>债序天工</strong> 是一个面向智能体的企业级项目还债流 Skill。
+            它不是普通 checklist，而是一套“先查债、再排债、最后还债”的项目治理流程。
+          </p>
+          <p>
+            它会从安全、数据、发布、测试、架构、代码、UI、性能、观测、文档治理等维度审视项目，
+            并把债务整理成可执行、可验证、可排序的还债台账。
+          </p>
         </section>
 
-        <section class="search panel">
-          <div>
-            <p class="eyebrow eyebrow--compact">搜索</p>
-            <h2>按关键词定位章节</h2>
+        <section id="commands">
+          <h2>🚀 快速开始</h2>
+          <div class="command-grid">
+            <button class="command-card" data-copy="/hz audit 当前项目。按安全债、数据债、发布债、测试债、架构债、代码债、UI债、性能债、观测债、文档治理债全面审视，输出债务台账、优先级 P0-P3、证据、影响、修复建议、验证方式。">
+              <span>查债</span>
+              <code>/hz audit</code>
+              <small>全面审视项目债务，输出证据、影响和优先级。</small>
+            </button>
+            <button class="command-card" data-copy="/hz plan 基于当前债务台账，生成分阶段还债路线图，按 P0/P1/P2/P3 排序。">
+              <span>排债</span>
+              <code>/hz plan</code>
+              <small>把发现整理成阶段化路线图。</small>
+            </button>
+            <button class="command-card" data-copy="/hz fix 只处理 P0/P1 债务，优先做最小安全修复，并说明验证方式。">
+              <span>还债</span>
+              <code>/hz fix</code>
+              <small>优先修 P0/P1，避免大范围误伤。</small>
+            </button>
           </div>
-          <label class="searchbox">
-            <span>查找债务、命令、平台或优先级</span>
-            <input v-model="query" type="search" placeholder="例如：P0、Claude Code、安装、验证" />
-          </label>
+          <p class="hint" id="copy-status">点击任意指令卡片可复制命令。</p>
         </section>
 
-        <section class="layout">
-          <aside class="toc panel">
-            <div class="toc__head">
-              <p class="eyebrow eyebrow--compact">目录</p>
-              <p class="toc__count">{{ visibleSections.length }} 章</p>
-            </div>
-            <a
-              v-for="section in visibleSections"
-              :key="section.id"
-              class="toc__item"
-              :href="'#' + section.id"
-            >
-              <span>{{ section.label }}</span>
-              <small>{{ section.title }}</small>
-            </a>
-          </aside>
-
-          <div class="content">
-            <article v-for="section in visibleSections" :key="section.id" :id="section.id" class="article panel">
-              <div class="article__meta">
-                <p class="eyebrow eyebrow--compact">{{ section.label }}</p>
-                <span class="article__id">{{ section.id }}</span>
-              </div>
-              <h2>{{ section.title }}</h2>
-              <p class="article__lead">{{ section.lead }}</p>
-
-              <ul v-if="section.points?.length" class="bullet-list">
-                <li v-for="point in section.points" :key="point">{{ point }}</li>
-              </ul>
-
-              <table v-if="section.table" class="data-table">
-                <thead>
-                  <tr>
-                    <th v-for="head in section.table.headers" :key="head">{{ head }}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="row in section.table.rows" :key="row[0]">
-                    <td v-for="cell in row" :key="cell">{{ cell }}</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div v-if="section.snippets?.length" class="snippets">
-                <div v-for="snippet in section.snippets" :key="snippet.label" class="snippet">
-                  <div class="snippet__head">
-                    <span>{{ snippet.label }}</span>
-                    <button class="copy-link" @click="copyText(snippet.value)">复制</button>
-                  </div>
-                  <pre>{{ snippet.value }}</pre>
-                </div>
-              </div>
-
-              <blockquote v-if="section.quote" class="quote">
-                {{ section.quote }}
-              </blockquote>
-            </article>
-          </div>
+        <section id="audit">
+          <h2>🔍 审视哪些债？</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>债务类型</th>
+                <th>重点检查</th>
+                <th>默认优先级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>安全债</td>
+                <td>认证、授权、密钥、越权、输入校验、依赖漏洞</td>
+                <td>P0 / P1</td>
+              </tr>
+              <tr>
+                <td>数据债</td>
+                <td>迁移、备份、恢复、敏感数据、审计、保留策略</td>
+                <td>P0 / P1</td>
+              </tr>
+              <tr>
+                <td>发布债</td>
+                <td>构建、CI/CD、环境一致性、回滚、发布门禁</td>
+                <td>P0 / P1</td>
+              </tr>
+              <tr>
+                <td>测试债</td>
+                <td>核心链路回归、集成测试、E2E、测试稳定性</td>
+                <td>P1 / P2</td>
+              </tr>
+              <tr>
+                <td>架构 / 代码 / UI 债</td>
+                <td>边界、复杂度、重复逻辑、状态、响应式、可访问性</td>
+                <td>P2 / P3</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
-      </main>
-    </div>
+
+        <section id="priority">
+          <h2>📊 还债等级</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>等级</th>
+                <th>含义</th>
+                <th>处理方式</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>P0</code></td>
+                <td>安全事故、数据损坏、权限绕过、发布阻断、不可恢复状态</td>
+                <td>立即修，不排队</td>
+              </tr>
+              <tr>
+                <td><code>P1</code></td>
+                <td>核心链路失败、回滚不可靠、关键测试缺失、高频稳定性问题</td>
+                <td>近期修</td>
+              </tr>
+              <tr>
+                <td><code>P2</code></td>
+                <td>维护效率、扩展性、体验一致性、架构清晰度问题</td>
+                <td>纳入治理计划</td>
+              </tr>
+              <tr>
+                <td><code>P3</code></td>
+                <td>低风险 polish、局部整理、文档补充</td>
+                <td>低优先级排队</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="install">
+          <h2>🛠️ 安装与下载</h2>
+          <p>仓库内包含两个 Skill：完整版 <code>enterprise-debt-remediation</code> 和极简入口 <code>hz</code>。</p>
+          <pre><code>$skills = "$env:USERPROFILE\.codex\skills"
+Copy-Item -Recurse -Force .\enterprise-debt-remediation "$skills\enterprise-debt-remediation"
+Copy-Item -Recurse -Force .\hz "$skills\hz"</code></pre>
+          <ul>
+            <li><a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/tag/v0.1.0">下载 .skill 发行包</a></li>
+            <li><a href="./changelog.html">查看更新日志</a></li>
+            <li><a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill">查看 GitHub 仓库</a></li>
+          </ul>
+        </section>
+
+        <section id="contract">
+          <h2>🧩 平台适配</h2>
+          <p>
+            核心契约保持平台中立。Codex、Claude Code、OpenClaw、Hermes 只负责把入口转成
+            <code>audit</code>、<code>plan</code>、<code>fix</code> 三种模式。
+          </p>
+          <p>
+            Windows 环境会先做 UTF-8 会话预检，再读取中文文件、运行验证脚本或输出报告。
+          </p>
+        </section>
+      </article>
+    </main>
 
     <script src="./wiki.js"></script>
   </body>
