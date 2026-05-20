@@ -1,0 +1,4 @@
+interface:
+  display_name: "Enterprise Debt Remediation"
+  short_description: "Audit and remediate project debt"
+  default_prompt: "Use $enterprise-debt-remediation to audit, plan, or fix project debt."

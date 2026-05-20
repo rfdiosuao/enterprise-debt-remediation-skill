@@ -1,0 +1,4 @@
+interface:
+  display_name: "HZ"
+  short_description: "Quick enterprise debt triage"
+  default_prompt: "Use $hz to run a quick audit, plan, or fix pass on a project."
