@@ -1,5 +1,7 @@
 # Enterprise Debt Remediation Skill
 
+[中文文档：债序天工](README.zh-CN.md)
+
 Enterprise Debt Remediation is a platform-neutral skill for auditing and paying down project debt. It focuses on the debt that blocks an enterprise-grade project: security, architecture, code quality, UI/UX, tests, delivery, observability, data, dependencies, documentation, and governance.
 
 It ships with two Codex skills:
