@@ -113,7 +113,7 @@ Content:
 - Unified model/account settings.
 - Local logs and task state.
 
-Visual: use existing launcher-preview pages and available logo/poster assets as product mockups. Do not rely only on generated art.
+Visual: use only Luming-specific assets for brand presentation. The existing `launcher-preview/*` pages are legacy UI references and should not be presented as Luming brand material unless they are visually reskinned and relabeled.
 
 ### 6. Best-Fit Workflows
 
@@ -173,8 +173,9 @@ Required assets:
    - Can be animated with CSS rather than generated as a static illustration.
 
 3. Product mockup frames
-   - Use `launcher-preview/index.html`, `desktop-console.html`, `mobile-console.html`, and `settings.html`.
-   - Present as real interface evidence.
+   - Create Luming-specific product mockups or reskin legacy UI references before use.
+   - Do not list `launcher-preview/*` as Luming material.
+   - Present product UI only when the brand, copy, and visual identity match Luming.
 
 4. Brand atmosphere image
    - Quiet, high-end Luming mood: mountain-valley echo, signal returning, warm operational calm.
@@ -184,6 +185,7 @@ Existing source assets to reuse:
 
 - `assets/logos/loom-luming-app-icon-512.png`
 - `assets/logos/loom-luming-wordmark-image2-v3-sword-LOOM.png`
+- `assets/logos/loom-luming-wordmark-black-white.jpg`
 - `projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom-logo.svg`
 - `projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom_business_architecture_poster.png`
 - `projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom_principle_architecture_poster.png`
@@ -293,4 +295,3 @@ Before claiming the site is done:
 - Confirm images load from local paths.
 - Confirm no text overlaps or overflows on mobile.
 - Confirm motion respects reduced-motion.
-
