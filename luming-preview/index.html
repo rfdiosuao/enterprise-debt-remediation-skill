@@ -7,336 +7,185 @@
       name="description"
       content="麓鸣 LOOM：给团队上岗一名会执行的 AI 员工，从一个重复流程开始，连接模型、手机、任务日志和模板沉淀。"
     />
-    <meta name="theme-color" content="#071b24" />
+    <meta name="theme-color" content="#06161a" />
     <title>麓鸣 LOOM · 会执行的 AI 员工工作台</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+
     <header class="site-header" id="top">
-      <a class="brand-lockup" href="#top" aria-label="麓鸣首页">
+      <a class="brand-lockup" href="#top" aria-label="麓鸣 LOOM">
         <img src="../assets/logos/loom-luming-app-icon-512.png" alt="" />
-        <span>
-          <strong>麓鸣 LOOM</strong>
-          <small>AI Employee Workbench</small>
-        </span>
+        <span>麓鸣 LOOM</span>
       </a>
       <nav class="site-nav" aria-label="页面导航">
-        <a href="#loop">执行闭环</a>
-        <a href="#proof">品牌资产</a>
-        <a href="#workflows">适用流程</a>
-        <a class="nav-cta" href="#pilot">预约试跑</a>
+        <a href="#runway">上岗路径</a>
+        <a href="#system">执行系统</a>
+        <a href="#assets">品牌资产</a>
+        <a href="#pilot">试跑</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">LOOM / LUMING</p>
-          <h1 id="hero-title">
-            <span>给你的团队，</span>
-            <span>上岗一名</span>
-            <span>会执行的</span>
-            <span>AI 员工。</span>
-          </h1>
-          <p class="hero-lede">
-            <span>从一个重复流程开始：</span>
-            <span>连接模型、连接手机、发布任务。</span>
-            <span>回收日志，把工作变成</span>
-            <span>可执行、可复盘、可复用的任务闭环。</span>
-          </p>
-          <div class="hero-actions" aria-label="主要操作">
-            <a class="btn btn-primary" href="#pilot">带一个流程来，30 分钟跑给你看</a>
-            <a class="btn btn-secondary" href="#loop">先看执行闭环</a>
+        <div class="hero-media" aria-hidden="true">
+          <img class="hero-wordmark ghost" src="../assets/logos/loom-luming-wordmark-black-white.jpg" alt="" />
+          <img class="hero-wordmark gold" src="../assets/logos/loom-luming-wordmark-image2-v3-sword-LOOM.png" alt="" />
+          <div class="execution-map">
+            <svg viewBox="0 0 1200 720" preserveAspectRatio="none" role="img" aria-label="执行路径动画">
+              <path class="map-path map-path-muted" d="M74 482 C 228 344, 330 598, 478 424 S 708 174, 892 332 S 1002 560, 1144 258" />
+              <path class="map-path map-path-live" d="M74 482 C 228 344, 330 598, 478 424 S 708 174, 892 332 S 1002 560, 1144 258" />
+            </svg>
+            <span class="node node-a">模型</span>
+            <span class="node node-b">手机</span>
+            <span class="node node-c">证据</span>
+            <span class="node node-d">确认</span>
+            <span class="node node-e">模板</span>
           </div>
-          <dl class="hero-metrics" aria-label="试点方式">
-            <div>
-              <dt>试点入口</dt>
-              <dd>一个真实流程</dd>
-            </div>
-            <div>
-              <dt>过程证据</dt>
-              <dd>截图 / 日志 / 状态</dd>
-            </div>
-            <div>
-              <dt>扩展方式</dt>
-              <dd>模板复用</dd>
-            </div>
-          </dl>
+          <div class="signal-rail">
+            <span style="--i: 0"></span>
+            <span style="--i: 1"></span>
+            <span style="--i: 2"></span>
+            <span style="--i: 3"></span>
+            <span style="--i: 4"></span>
+            <span style="--i: 5"></span>
+            <span style="--i: 6"></span>
+            <span style="--i: 7"></span>
+            <span style="--i: 8"></span>
+            <span style="--i: 9"></span>
+            <span style="--i: 10"></span>
+            <span style="--i: 11"></span>
+          </div>
         </div>
 
-        <div class="hero-stage" data-reveal aria-label="麓鸣执行工作台示意">
-          <div class="wordmark-card">
-            <img
-              src="../assets/logos/loom-luming-wordmark-black-white.jpg"
-              alt="麓鸣 LOOM 黑白字标"
-            />
-          </div>
-          <div class="workbench-panel">
-            <div class="panel-top">
-              <span class="status-dot"></span>
-              <strong>AI 员工 · 今日上岗</strong>
-              <small>Human approval stays in the loop</small>
-            </div>
-            <div class="task-route" aria-hidden="true">
-              <span>模型</span>
-              <i></i>
-              <span>任务</span>
-              <i></i>
-              <span>手机</span>
-              <i></i>
-              <span>日志</span>
-            </div>
-            <div class="phone-matrix" aria-label="手机执行状态">
-              <article>
-                <b>01</b>
-                <span>在线</span>
-              </article>
-              <article>
-                <b>02</b>
-                <span>执行中</span>
-              </article>
-              <article>
-                <b>03</b>
-                <span>待确认</span>
-              </article>
-              <article>
-                <b>04</b>
-                <span>回传</span>
-              </article>
-            </div>
-            <div class="log-stream">
-              <p><span>09:41</span> 任务已分发到手机 02</p>
-              <p><span>09:42</span> 截图证据已回传</p>
-              <p><span>09:44</span> 等待人工确认外发</p>
-            </div>
+        <div class="hero-content" data-reveal>
+          <p class="kicker">AI EMPLOYEE WORKBENCH</p>
+          <h1 id="hero-title">麓鸣 LOOM</h1>
+          <p class="hero-line">
+            给你的团队，上岗一名会执行的 AI 员工。
+          </p>
+          <p class="hero-subcopy">
+            从一个重复流程开始，连接模型、手机和日志，让任务在本地控制台里被派发、执行、回传、确认、沉淀。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pilot">带一个流程来试跑</a>
+            <a class="btn btn-ghost" href="#runway">看它怎么上岗</a>
           </div>
         </div>
+
+        <aside class="mission-panel" data-reveal aria-label="当前任务状态">
+          <div class="mission-head">
+            <span>RUN 04</span>
+            <strong>短视频账号发布检查</strong>
+          </div>
+          <ol class="mission-steps">
+            <li class="done"><span>接入模型</span><b>ready</b></li>
+            <li class="done"><span>连接手机</span><b>online</b></li>
+            <li class="active"><span>截图回传</span><b>running</b></li>
+            <li><span>人工确认</span><b>waiting</b></li>
+          </ol>
+        </aside>
+
+        <a class="next-peek" href="#runway" aria-label="进入上岗路径">
+          <span>执行闭环正在下方展开</span>
+        </a>
       </section>
 
-      <section class="pain-section section-band">
-        <div class="section-copy" data-reveal>
-          <p class="eyebrow">THE REAL COST</p>
-          <h2>你的团队不是慢，是太多工作还需要人盯着流程。</h2>
-          <p>
-            复制粘贴、跨系统录入、重复回复、手机端发布、截图核对、报表整理。
-            这些事看起来不难，但最容易吞掉人的耐心和管理注意力。
-          </p>
+      <section class="runway" id="runway" aria-labelledby="runway-title">
+        <div class="section-intro" data-reveal>
+          <p class="kicker">ONBOARDING SEQUENCE</p>
+          <h2 id="runway-title">不要再卖“功能”。卖一名 AI 员工真正上岗的过程。</h2>
         </div>
-        <div class="pain-grid" data-reveal>
+        <div class="runway-track" data-reveal>
           <article>
             <span>01</span>
-            <strong>每天都做</strong>
-            <p>规则稳定，但没人敢完全放手。</p>
+            <h3>带来一个流程</h3>
+            <p>客户不需要懂模型、命令行或配置文件，只要拿出每天都在重复的真实动作。</p>
           </article>
           <article>
             <span>02</span>
-            <strong>跨多个系统</strong>
-            <p>网页、桌面软件、手机 App 来回切。</p>
+            <h3>接通执行面</h3>
+            <p>模型账号、手机设备、本地任务日志进入同一条执行线路，状态可见。</p>
           </article>
           <article>
             <span>03</span>
-            <strong>结果要留证据</strong>
-            <p>老板要的是能复盘，不是空口说省时。</p>
+            <h3>跑出证据</h3>
+            <p>截图、时间线、异常点和人工确认位一起回传，不把“自动化”讲成玄学。</p>
           </article>
-        </div>
-      </section>
-
-      <section class="loop-section" id="loop" aria-labelledby="loop-title">
-        <div class="section-copy center" data-reveal>
-          <p class="eyebrow">EXECUTION LOOP</p>
-          <h2 id="loop-title">麓鸣卖的不是按钮，是一条能跑起来的执行闭环。</h2>
-          <p>先从一个稳定流程开始，记录人工基线，再让 AI 员工跑出同一条流程的证据。</p>
-        </div>
-        <div class="loop-board" data-reveal>
-          <div class="loop-pulse" aria-hidden="true"></div>
-          <article class="loop-node is-active">
-            <span>01</span>
-            <strong>提交任务</strong>
-            <p>把真实流程交进来。</p>
-          </article>
-          <article class="loop-node">
-            <span>02</span>
-            <strong>手机执行</strong>
-            <p>设备状态可观察。</p>
-          </article>
-          <article class="loop-node">
-            <span>03</span>
-            <strong>证据回传</strong>
-            <p>截图、日志、状态。</p>
-          </article>
-          <article class="loop-node">
+          <article>
             <span>04</span>
-            <strong>人工确认</strong>
-            <p>关键动作不盲发。</p>
-          </article>
-          <article class="loop-node">
-            <span>05</span>
-            <strong>模板沉淀</strong>
-            <p>下一次更容易复用。</p>
+            <h3>沉淀模板</h3>
+            <p>这一次不是演示结束，而是变成下一次可复用、可交接、可扩展的流程资产。</p>
           </article>
         </div>
       </section>
 
-      <section class="package-section section-band">
-        <div class="employee-file" data-reveal>
-          <div class="file-header">
-            <img src="../assets/logos/loom-luming-app-icon-512.png" alt="" />
-            <div>
-              <p>AI Employee File</p>
-              <h2>麓鸣 · 流程执行员</h2>
-            </div>
-          </div>
-          <div class="file-grid">
-            <div>
-              <span>技能</span>
-              <strong>发布任务 / 看日志 / 回传证据</strong>
-            </div>
-            <div>
-              <span>设备</span>
-              <strong>手机矩阵 + 本地控制台</strong>
-            </div>
-            <div>
-              <span>边界</span>
-              <strong>需要确认后才会外发</strong>
-            </div>
-            <div>
-              <span>沉淀</span>
-              <strong>流程模板 / 复盘记录</strong>
-            </div>
-          </div>
+      <section class="system" id="system" aria-labelledby="system-title">
+        <div class="system-copy" data-reveal>
+          <p class="kicker">THE WORKBENCH</p>
+          <h2 id="system-title">麓鸣把“有人盯着”这件事，变成一个可以交付的系统。</h2>
+          <p>
+            它的溢价不只来自效率，而来自安心感：任务在哪里、手机跑到哪一步、什么证据回来了、哪里需要人确认，都被放到同一张执行桌面上。
+          </p>
         </div>
-        <div class="section-copy" data-reveal>
-          <p class="eyebrow">GO TO MARKET</p>
-          <h2>客户买到的是“上岗陪跑”，不是又一个要自己配置的工具。</h2>
-          <div class="offer-list">
-            <article>
-              <span>1</span>
-              <strong>流程诊断</strong>
-              <p>挑出第一条值得 AI 员工接手的高频流程。</p>
-            </article>
-            <article>
-              <span>2</span>
-              <strong>上岗试点</strong>
-              <p>连接模型、手机、日志，把一个真实流程跑通。</p>
-            </article>
-            <article>
-              <span>3</span>
-              <strong>执行工作台</strong>
-              <p>持续管理任务模板、设备状态和过程证据。</p>
-            </article>
+        <div class="system-stage" data-reveal>
+          <div class="phone-wall">
+            <div class="phone-card"><b>01</b><span>online</span></div>
+            <div class="phone-card live"><b>02</b><span>capture</span></div>
+            <div class="phone-card"><b>03</b><span>review</span></div>
+            <div class="phone-card"><b>04</b><span>return</span></div>
+            <div class="phone-card"><b>05</b><span>queued</span></div>
+            <div class="phone-card"><b>06</b><span>idle</span></div>
+          </div>
+          <div class="terminal-card" aria-label="执行日志">
+            <p><span>09:41</span> dispatch workflow: account_publish_check</p>
+            <p><span>09:42</span> phone 02 captured screen evidence</p>
+            <p><span>09:44</span> human confirmation required before outbound action</p>
+            <p><span>09:45</span> template updated: retry branch added</p>
           </div>
         </div>
       </section>
 
-      <section class="proof-section" id="proof" aria-labelledby="proof-title">
-        <div class="section-copy center" data-reveal>
-          <p class="eyebrow">BRAND ASSETS</p>
-          <h2 id="proof-title">用真正的麓鸣资产撑住高级感。</h2>
-          <p>首页主视觉使用字标和山形声波 icon；产品说明用已存在的麓鸣海报，不用旧界面冒充品牌素材。</p>
+      <section class="assets-section" id="assets" aria-labelledby="assets-title">
+        <div class="section-intro" data-reveal>
+          <p class="kicker">REAL LUMING ASSETS</p>
+          <h2 id="assets-title">这次只用麓鸣自己的资产，不拿旧界面凑数。</h2>
         </div>
-        <div class="asset-showcase" data-reveal>
-          <figure class="asset-large">
-            <img src="../assets/logos/loom-luming-wordmark-image2-v3-sword-LOOM.png" alt="金色麓鸣 LOOM 字标" />
-            <figcaption>金色中文字标 · 品牌情绪溢价</figcaption>
+        <div class="asset-wall" data-reveal>
+          <figure class="asset-word">
+            <img src="../assets/logos/loom-luming-wordmark-black-white.jpg" alt="麓鸣 LOOM 黑白字标" />
+            <figcaption>黑白字标：克制、适合首屏品牌 film。</figcaption>
           </figure>
-          <div class="poster-stack">
-            <figure>
-              <img
-                src="../projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom_promo_value_poster.png"
-                alt="麓鸣价值海报"
-              />
-              <figcaption>价值海报</figcaption>
-            </figure>
-            <figure>
-              <img
-                src="../projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom_business_architecture_poster.png"
-                alt="麓鸣商业架构海报"
-              />
-              <figcaption>商业架构</figcaption>
-            </figure>
-          </div>
+          <figure class="asset-gold">
+            <img src="../assets/logos/loom-luming-wordmark-image2-v3-sword-LOOM.png" alt="金色麓鸣 LOOM 字标" />
+            <figcaption>金色字标：用于高溢价、结尾和品牌记忆点。</figcaption>
+          </figure>
+          <figure>
+            <img src="../projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom_promo_value_poster.png" alt="麓鸣价值海报" />
+            <figcaption>价值海报：把重复工作交给 AI，把人力还给增长。</figcaption>
+          </figure>
+          <figure>
+            <img src="../projects/loom_enterprise_ai_automation_pitch_ppt169_20260701/images/loom_business_architecture_poster.png" alt="麓鸣商业架构海报" />
+            <figcaption>架构海报：安装、模型、手机和日志组成闭环。</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="workflows-section section-band" id="workflows" aria-labelledby="workflows-title">
-        <div class="section-copy" data-reveal>
-          <p class="eyebrow">BEST FIRST WORKFLOWS</p>
-          <h2 id="workflows-title">先接手高频、稳定、跨系统的流程。</h2>
-          <p>不需要一开始替代整个部门，先找一条每天都在重复、结果能验证的流程。</p>
+      <section class="pilot" id="pilot" aria-labelledby="pilot-title">
+        <div class="pilot-mark" aria-hidden="true">
+          <img src="../assets/logos/loom-luming-app-icon-512.png" alt="" />
         </div>
-        <div class="workflow-grid" data-reveal>
-          <article>
-            <strong>内容运营</strong>
-            <p>素材整理、发布检查、截图留痕。</p>
-          </article>
-          <article>
-            <strong>电商客服</strong>
-            <p>重复咨询整理、工单跟进、状态回填。</p>
-          </article>
-          <article>
-            <strong>本地生活</strong>
-            <p>门店信息核对、活动发布、结果巡检。</p>
-          </article>
-          <article>
-            <strong>短视频团队</strong>
-            <p>账号检查、发布流程、数据回收。</p>
-          </article>
-          <article>
-            <strong>软件测试</strong>
-            <p>手机端回归、截图取证、异常记录。</p>
-          </article>
-          <article>
-            <strong>内部流程</strong>
-            <p>跨系统录入、审批提醒、报表清理。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="moat-section" aria-labelledby="moat-title">
-        <div class="section-copy center" data-reveal>
-          <p class="eyebrow">WHY IT STICKS</p>
-          <h2 id="moat-title">护城河来自交付闭环，而不是一个壳。</h2>
-        </div>
-        <div class="moat-layers" data-reveal>
-          <article>
-            <span>Layer 01</span>
-            <strong>本地 Bridge 与安装链路</strong>
-          </article>
-          <article>
-            <span>Layer 02</span>
-            <strong>手机执行网络</strong>
-          </article>
-          <article>
-            <span>Layer 03</span>
-            <strong>模型账号与路由层</strong>
-          </article>
-          <article>
-            <span>Layer 04</span>
-            <strong>流程模板与证据历史</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="closing-section" id="pilot" aria-labelledby="pilot-title">
-        <div class="closing-panel" data-reveal>
-          <img src="../assets/logos/loom-luming-wordmark-black-white.jpg" alt="麓鸣 LOOM 黑白字标" />
-          <div>
-            <p class="eyebrow">START SMALL</p>
-            <h2 id="pilot-title">带一个真实重复流程来。</h2>
-            <p>
-              我们先跑一条，展示任务分发、手机执行、日志回传和人工确认点。
-              跑通以后，再决定是否进入 7 天试点。
-            </p>
-            <a class="btn btn-primary" href="mailto:hello@luming.local?subject=麓鸣流程试跑">预约 30 分钟流程试跑</a>
-          </div>
+        <div class="pilot-copy" data-reveal>
+          <p class="kicker">START WITH ONE LOOP</p>
+          <h2 id="pilot-title">别先做大平台。先拿一条流程，跑出一次可信的证据。</h2>
+          <p>
+            30 分钟试跑的目标不是承诺替代整个团队，而是让客户亲眼看到：任务被派发，手机真在执行，日志真能回传，人也知道该在哪里确认。
+          </p>
+          <a class="btn btn-primary" href="mailto:hello@luming.local?subject=麓鸣流程试跑">预约 30 分钟试跑</a>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <span>麓鸣 LOOM</span>
-      <a href="#top">回到顶部</a>
-    </footer>
   </body>
 </html>
