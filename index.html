@@ -3,187 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>债序天工 · 企业级项目还债流 Skill Wiki</title>
+    <title>债序天工 · Enterprise Debt Remediation Skill</title>
     <meta
       name="description"
-      content="债序天工是一个面向智能体的企业级项目还债流 Skill Wiki，覆盖审计、规划、修复和更新日志。"
+      content="债序天工把项目技术债审计、排序、修复和 Codex /goal 生成收敛成一套可验证的智能体工作流。"
     />
-    <meta property="og:title" content="债序天工 · 企业级项目还债流 Skill Wiki" />
-    <meta property="og:description" content="先查债，再排债，最后还债。适配 Codex、Claude Code、OpenClaw、Hermes。" />
+    <meta property="og:title" content="债序天工 · Enterprise Debt Remediation Skill" />
+    <meta property="og:description" content="先找债，再排债，最后生成可执行的 /goal。适配 Codex、Claude Code、OpenClaw、Hermes。" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#f5f8ff" />
+    <meta name="theme-color" content="#f6f8fb" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./wiki.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="./index.html">债序天工 Wiki</a>
+      <a class="brand" href="./index.html" aria-label="债序天工首页">
+        <img src="./assets/readme/debt-to-goal-logo.png" alt="" />
+        <span>债序天工</span>
+      </a>
       <nav class="site-nav" aria-label="主导航">
         <a href="./index.html" aria-current="page">首页</a>
-        <a href="./changelog.html">更新日志</a>
-        <a href="#commands">指令</a>
-        <a href="#priority">等级</a>
+        <a href="#commands">命令</a>
         <a href="#install">安装</a>
+        <a href="#adapters">适配</a>
+        <a href="./changelog.html">更新日志</a>
       </nav>
       <a class="github-link" href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
-    <main class="doc-shell" id="top">
-      <article class="doc-card">
-        <h1>🧾 债序天工 | 企业级项目还债流 Skill</h1>
-
-        <blockquote class="status-block">
-          <p><strong>版本</strong>: v0.1.0</p>
-          <p><strong>状态</strong>: 已开源 · GitHub Pages 已上线</p>
-          <p><strong>入口</strong>: <code>/hz audit</code> · <code>/hz plan</code> · <code>/hz fix</code> · <code>/hz goal</code></p>
-          <p><strong>适配</strong>: Codex · Claude Code · OpenClaw · Hermes</p>
-        </blockquote>
-
-        <hr />
-
-        <section id="overview">
-          <h2>📖 简介</h2>
-          <p>
-            <strong>债序天工</strong> 是一个面向智能体的企业级项目还债流 Skill。
-            它不是普通 checklist，而是一套“先查债、再排债、最后还债”的项目治理流程。
+    <main>
+      <section class="hero-section" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Enterprise Debt Remediation Skill</p>
+          <h1>把项目债务整理成可执行的 /goal</h1>
+          <p class="lead">
+            债序天工先审计安全、发布、测试、架构、UI、文档和治理债务，再把证据、优先级、验收方式合成一条可以交给 Codex 执行的修复目标。
           </p>
-          <p>
-            它会从安全、数据、发布、测试、架构、代码、UI、性能、观测、文档治理等维度审视项目，
-            并把债务整理成可执行、可验证、可排序的还债台账。
-          </p>
-        </section>
-
-        <section id="commands">
-          <h2>🚀 快速开始</h2>
-          <div class="command-grid">
-            <button class="command-card" data-copy="/hz audit 当前项目。按安全债、数据债、发布债、测试债、架构债、代码债、UI债、性能债、观测债、文档治理债全面审视，输出债务台账、优先级 P0-P3、证据、影响、修复建议、验证方式。">
-              <span>查债</span>
-              <code>/hz audit</code>
-              <small>全面审视项目债务，输出证据、影响和优先级。</small>
-            </button>
-            <button class="command-card" data-copy="/hz plan 基于当前债务台账，生成分阶段还债路线图，按 P0/P1/P2/P3 排序。">
-              <span>排债</span>
-              <code>/hz plan</code>
-              <small>把发现整理成阶段化路线图。</small>
-            </button>
-            <button class="command-card" data-copy="/hz fix 只处理 P0/P1 债务，优先做最小安全修复，并说明验证方式。">
-              <span>还债</span>
-              <code>/hz fix</code>
-              <small>优先修 P0/P1，避免大范围误伤。</small>
-            </button>
-            <button class="command-card" data-copy="/hz goal 当前项目。先找出当前范围内有证据支撑的债务，再生成一个解决这些债务的 Codex /goal。">
-              <span>成约</span>
-              <code>/hz goal</code>
-              <small>先查债，再生成可执行的还债 goal。</small>
-            </button>
+          <div class="hero-actions">
+            <a class="primary-action" href="#commands">查看命令</a>
+            <a class="secondary-action" href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/tree/main/dist" target="_blank" rel="noreferrer">下载 .skill</a>
           </div>
-          <p class="hint" id="copy-status">点击任意指令卡片可复制命令。</p>
-        </section>
+        </div>
+        <figure class="hero-visual" aria-label="债务线索收束为目标节点的品牌图">
+          <img src="./assets/readme/debt-to-goal-logo.png" alt="债务线索收束为目标节点" />
+        </figure>
+      </section>
 
-        <section id="audit">
-          <h2>🔍 审视哪些债？</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>债务类型</th>
-                <th>重点检查</th>
-                <th>默认优先级</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>安全债</td>
-                <td>认证、授权、密钥、越权、输入校验、依赖漏洞</td>
-                <td>P0 / P1</td>
-              </tr>
-              <tr>
-                <td>数据债</td>
-                <td>迁移、备份、恢复、敏感数据、审计、保留策略</td>
-                <td>P0 / P1</td>
-              </tr>
-              <tr>
-                <td>发布债</td>
-                <td>构建、CI/CD、环境一致性、回滚、发布门禁</td>
-                <td>P0 / P1</td>
-              </tr>
-              <tr>
-                <td>测试债</td>
-                <td>核心链路回归、集成测试、E2E、测试稳定性</td>
-                <td>P1 / P2</td>
-              </tr>
-              <tr>
-                <td>架构 / 代码 / UI 债</td>
-                <td>边界、复杂度、重复逻辑、状态、响应式、可访问性</td>
-                <td>P2 / P3</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+      <section class="signal-strip" aria-label="核心能力">
+        <div>
+          <strong>4</strong>
+          <span>可识别子模式</span>
+        </div>
+        <div>
+          <strong>P0-P3</strong>
+          <span>风险优先级</span>
+        </div>
+        <div>
+          <strong>/goal</strong>
+          <span>Codex 执行目标</span>
+        </div>
+        <div>
+          <strong>4</strong>
+          <span>适配器入口</span>
+        </div>
+      </section>
 
-        <section id="priority">
-          <h2>📊 还债等级</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>等级</th>
-                <th>含义</th>
-                <th>处理方式</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>P0</code></td>
-                <td>安全事故、数据损坏、权限绕过、发布阻断、不可恢复状态</td>
-                <td>立即修，不排队</td>
-              </tr>
-              <tr>
-                <td><code>P1</code></td>
-                <td>核心链路失败、回滚不可靠、关键测试缺失、高频稳定性问题</td>
-                <td>近期修</td>
-              </tr>
-              <tr>
-                <td><code>P2</code></td>
-                <td>维护效率、扩展性、体验一致性、架构清晰度问题</td>
-                <td>纳入治理计划</td>
-              </tr>
-              <tr>
-                <td><code>P3</code></td>
-                <td>低风险 polish、局部整理、文档补充</td>
-                <td>低优先级排队</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+      <section class="section-band" id="commands">
+        <div class="section-heading">
+          <p class="eyebrow">Commands</p>
+          <h2>一个 `$hz`，四个明确子指令</h2>
+          <p>Codex 里可能只显示一个 `$hz` Skill，这是正常的：`goal` 是传给 `$hz` 的模式，不是独立 Skill。</p>
+        </div>
 
-        <section id="install">
-          <h2>🛠️ 安装与下载</h2>
-          <p>仓库内包含两个 Skill：完整版 <code>enterprise-debt-remediation</code> 和极简入口 <code>hz</code>。</p>
-          <pre><code>$skills = "$env:USERPROFILE\.codex\skills"
+        <div class="command-grid">
+          <button class="command-card" data-copy="$hz audit 当前项目。按安全债、数据债、发布债、测试债、架构债、代码债、UI 债、性能债、观测债、文档治理债全面审视，并输出证据、优先级、影响、修复建议和验证方式。">
+            <span>Audit</span>
+            <code>$hz audit</code>
+            <small>先找债。输出证据、影响、优先级和验证方式。</small>
+          </button>
+          <button class="command-card" data-copy="$hz plan 当前项目。基于债务台账生成分阶段还债路线图，按 P0/P1/P2/P3 排序。">
+            <span>Plan</span>
+            <code>$hz plan</code>
+            <small>再排债。把发现整理成可交付的修复路线。</small>
+          </button>
+          <button class="command-card" data-copy="$hz fix 当前项目。只处理 P0/P1 或我明确点名的问题，做最小安全修复并说明验证方式。">
+            <span>Fix</span>
+            <code>$hz fix</code>
+            <small>开始还债。优先处理高风险问题，保持改动可审计。</small>
+          </button>
+          <button class="command-card command-card-accent" data-copy="$hz goal 当前项目。先找出债务，再生成解决所有债务的 /goal。">
+            <span>Goal</span>
+            <code>$hz goal</code>
+            <small>生成目标。把债务台账变成 copy-ready Codex /goal。</small>
+          </button>
+        </div>
+        <p class="hint" id="copy-status">点击命令卡片可复制完整提示。</p>
+      </section>
+
+      <section class="section-band" id="workflow">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>从债务台账到修复目标</h2>
+          <p>Skill 强制先证据后结论，避免把主观“感觉乱”误当成技术债。</p>
+        </div>
+        <div class="workflow-steps">
+          <article>
+            <span>01</span>
+            <h3>Audit</h3>
+            <p>扫描安全、发布、测试、架构、UI、观测和文档治理债务。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Rank</h3>
+            <p>按 P0-P3 排序，保留证据、影响范围和验证方式。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Goal</h3>
+            <p>生成可复制到 Codex 的 `/goal`，一次性收敛修复范围。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band" id="star-growth">
+        <div class="section-heading">
+          <p class="eyebrow">Star Growth</p>
+          <h2>仓库增长趋势</h2>
+          <p>README 和文档站共用同一份公开 Star History 图，方便访客快速判断项目热度。</p>
+        </div>
+        <picture class="star-history">
+          <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rfdiosuao/enterprise-debt-remediation-skill&type=Date&theme=dark" />
+          <img alt="Enterprise Debt Remediation Skill Star history chart" src="https://api.star-history.com/svg?repos=rfdiosuao/enterprise-debt-remediation-skill&type=Date" />
+        </picture>
+      </section>
+
+      <section class="section-band" id="install">
+        <div class="section-heading">
+          <p class="eyebrow">Install</p>
+          <h2>安装到 Codex</h2>
+          <p>仓库内包含完整 Skill 和极简入口两个目录，两个都复制到 Codex Skills 目录即可。</p>
+        </div>
+        <pre><code>$skills = "$env:USERPROFILE\.codex\skills"
 Copy-Item -Recurse -Force .\enterprise-debt-remediation "$skills\enterprise-debt-remediation"
 Copy-Item -Recurse -Force .\hz "$skills\hz"</code></pre>
-          <ul>
-            <li><a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/tag/v0.1.0">下载 .skill 发行包</a></li>
-            <li><a href="./changelog.html">查看更新日志</a></li>
-            <li><a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill">查看 GitHub 仓库</a></li>
-          </ul>
-        </section>
+      </section>
 
-        <section id="contract">
-          <h2>🧩 平台适配</h2>
-          <p>
-            核心契约保持平台中立。Codex、Claude Code、OpenClaw、Hermes 只负责把入口转成
-            <code>audit</code>、<code>plan</code>、<code>fix</code>、<code>goal</code> 四种模式。
-          </p>
-          <p>
-            Windows 环境会先做 UTF-8 会话预检，再读取中文文件、运行验证脚本或输出报告。
-          </p>
-        </section>
-      </article>
+      <section class="section-band" id="adapters">
+        <div class="section-heading">
+          <p class="eyebrow">Adapters</p>
+          <h2>多平台同一份核心契约</h2>
+          <p>平台适配层只负责入口表达，审计边界、优先级、输出格式和 `/hz goal` 语义都由核心契约约束。</p>
+        </div>
+        <div class="adapter-grid">
+          <article>
+            <h3>Codex</h3>
+            <p>`$hz audit|plan|fix|goal`，其中 `goal` 会调用 qiaomu-goal-meta-skill 的目标生成规范。</p>
+          </article>
+          <article>
+            <h3>Claude Code</h3>
+            <p>复制 `enterprise-debt-remediation/assets/adapters/claude-code/hz.md` 到命令目录。</p>
+          </article>
+          <article>
+            <h3>OpenClaw</h3>
+            <p>使用 `openclaw/hz.prompt.md` 作为工作区 Prompt、命令或 Skill 入口。</p>
+          </article>
+          <article>
+            <h3>Hermes</h3>
+            <p>使用 `hermes/hz.prompt.md` 作为命令宏或系统提示片段。</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <script src="./wiki.js"></script>

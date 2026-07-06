@@ -1,4 +1,12 @@
+<p align="center">
+  <img alt="债序天工 Logo" src="assets/readme/debt-to-goal-logo.png" width="180">
+</p>
+
 <h1 align="center">债序天工</h1>
+
+<p align="center">
+  把“项目有点乱”变成可审计、可排序、可执行的还债路线图。
+</p>
 
 <p align="center">
   <a href="https://rfdiosuao.github.io/enterprise-debt-remediation-skill/">Wiki 在线版</a>
@@ -7,11 +15,13 @@
   ·
   <a href="README.md">English README</a>
   ·
-  <a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/tag/v0.1.0">下载 .skill 包</a>
+  <a href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill/tree/main/dist">下载 .skill 包</a>
 </p>
 
 <p align="center">
-  企业级项目还债流 Skill：先识别风险，再排序债务，再分阶段偿还。
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/rfdiosuao/enterprise-debt-remediation-skill?style=for-the-badge&label=Stars">
+  <img alt="License" src="https://img.shields.io/github/license/rfdiosuao/enterprise-debt-remediation-skill?style=for-the-badge">
+  <img alt=".skill package" src="https://img.shields.io/badge/package-.skill-1F8F6A?style=for-the-badge">
 </p>
 
 `债序天工` 是一个面向智能体的企业级项目还债流 Skill。它不是普通的代码洁癖清单，而是一套“先识别风险，再排序债务，再分阶段偿还”的项目治理流程。
@@ -22,6 +32,15 @@
 
 - `enterprise-debt-remediation`：完整审计与整改流程。
 - `hz`：极简快捷入口，支持 `/hz audit`、`/hz plan`、`/hz fix`、`/hz goal`。
+
+## Star 增长
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rfdiosuao/enterprise-debt-remediation-skill&type=Date&theme=dark">
+    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=rfdiosuao/enterprise-debt-remediation-skill&type=Date" width="720">
+  </picture>
+</p>
 
 ## 核心定位
 
@@ -56,7 +75,7 @@
 生成可执行 Goal：
 
 ```text
-/hz goal 当前项目。先找出当前范围内有证据支撑的债务，再生成一个解决这些债务的 Codex /goal。
+$hz goal 当前项目。先找出债务，再生成解决所有债务的 /goal。
 ```
 
 完整模式：
@@ -219,10 +238,10 @@ $hz
 $enterprise-debt-remediation
 ```
 
-也可以直接下载 Release 包：
+也可以直接下载仓库内当前打包产物：
 
-- [enterprise-debt-remediation.skill](https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/download/v0.1.0/enterprise-debt-remediation.skill)
-- [hz.skill](https://github.com/rfdiosuao/enterprise-debt-remediation-skill/releases/download/v0.1.0/hz.skill)
+- [enterprise-debt-remediation.skill](https://github.com/rfdiosuao/enterprise-debt-remediation-skill/blob/main/dist/enterprise-debt-remediation.skill)
+- [hz.skill](https://github.com/rfdiosuao/enterprise-debt-remediation-skill/blob/main/dist/hz.skill)
 
 ## 兼容主流智能体
 
@@ -357,9 +376,7 @@ rg -n --hidden --glob '!**/.git/**' 'TODO|\[TODO\]|placeholder|MANUAL MIGRATION 
 ## 打包
 
 ```powershell
-New-Item -ItemType Directory -Force .\dist | Out-Null
-Compress-Archive -Path .\enterprise-debt-remediation\* -DestinationPath .\dist\enterprise-debt-remediation.skill -Force
-Compress-Archive -Path .\hz\* -DestinationPath .\dist\hz.skill -Force
+powershell -ExecutionPolicy Bypass -File .\scripts\package-skills.ps1
 ```
 
 `.skill` 本质是 zip 包，包内根层级应直接包含 `SKILL.md`。

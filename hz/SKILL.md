@@ -9,6 +9,8 @@ Run the smallest useful debt pass. Default to `audit` when no mode is given. Tre
 
 **REQUIRED SUB-SKILL:** Use `qiaomu-goal-meta-skill` when generating a debt-remediation `/goal`.
 
+In Codex, use `$hz goal ...` to pass the `goal` mode to this skill. Some clients show only the single `$hz` skill entry and do not display `goal` as a separate selectable subcommand.
+
 ## Environment Preflight
 
 Detect the host OS before routing. If the host is Windows, apply the UTF-8 session bootstrap first, then continue with the chosen mode.
