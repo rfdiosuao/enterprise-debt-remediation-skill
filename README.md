@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Enterprise Debt Remediation logo" src="assets/readme/debt-to-goal-logo.png" width="180">
+  <img alt="Enterprise Debt Remediation logo" src="assets/readme/debt-to-goal-mark.png" width="128">
 </p>
 
 <h1 align="center">Enterprise Debt Remediation Skill</h1>

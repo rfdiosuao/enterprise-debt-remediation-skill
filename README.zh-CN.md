@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="债序天工 Logo" src="assets/readme/debt-to-goal-logo.png" width="180">
+  <img alt="债序天工 Logo" src="assets/readme/debt-to-goal-mark.png" width="128">
 </p>
 
 <h1 align="center">债序天工</h1>
