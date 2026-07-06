@@ -1,0 +1,54 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Debt Remediation workflow preview</title>
+  <desc id="desc">A visual workflow showing audit, rank, plan, fix, and goal generation for project debt remediation.</desc>
+  <rect width="1280" height="720" fill="#F7F8F5"/>
+  <path d="M0 96H1280" stroke="#D9DED5"/>
+  <path d="M0 624H1280" stroke="#D9DED5"/>
+  <g opacity="0.58">
+    <path d="M80 0V720M240 0V720M400 0V720M560 0V720M720 0V720M880 0V720M1040 0V720M1200 0V720" stroke="#E3E7DF"/>
+    <path d="M0 160H1280M0 280H1280M0 400H1280M0 520H1280" stroke="#E3E7DF"/>
+  </g>
+  <rect x="88" y="78" width="1104" height="564" rx="18" fill="#101820"/>
+  <rect x="112" y="102" width="1056" height="516" rx="10" fill="#FCFDF9"/>
+  <rect x="112" y="102" width="1056" height="72" rx="10" fill="#101820"/>
+  <circle cx="148" cy="138" r="7" fill="#E15A3D"/>
+  <circle cx="174" cy="138" r="7" fill="#DDA63A"/>
+  <circle cx="200" cy="138" r="7" fill="#1F8F6A"/>
+  <text x="238" y="146" fill="#F7F8F5" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" font-weight="700">/hz goal current project</text>
+  <text x="144" y="226" fill="#101820" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">Debt Ledger to Executable Goal</text>
+  <text x="146" y="266" fill="#58635C" font-family="Arial, sans-serif" font-size="18">Evidence-first remediation for security, release, tests, docs, UI, and governance debt.</text>
+  <g transform="translate(146 322)">
+    <rect width="184" height="124" rx="8" fill="#F1F4EE" stroke="#D4DCD0"/>
+    <text x="22" y="38" fill="#1F8F6A" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="14" font-weight="700">AUDIT</text>
+    <text x="22" y="70" fill="#101820" font-family="Arial, sans-serif" font-size="22" font-weight="700">Find debt</text>
+    <text x="22" y="98" fill="#58635C" font-family="Arial, sans-serif" font-size="14">Evidence, impact, risk</text>
+  </g>
+  <path d="M352 384H420" stroke="#DDA63A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M420 384L406 372M420 384L406 396" stroke="#DDA63A" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(444 322)">
+    <rect width="184" height="124" rx="8" fill="#F1F4EE" stroke="#D4DCD0"/>
+    <text x="22" y="38" fill="#1F8F6A" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="14" font-weight="700">RANK</text>
+    <text x="22" y="70" fill="#101820" font-family="Arial, sans-serif" font-size="22" font-weight="700">P0 to P3</text>
+    <text x="22" y="98" fill="#58635C" font-family="Arial, sans-serif" font-size="14">Priority before polish</text>
+  </g>
+  <path d="M650 384H718" stroke="#DDA63A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M718 384L704 372M718 384L704 396" stroke="#DDA63A" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(742 322)">
+    <rect width="184" height="124" rx="8" fill="#F1F4EE" stroke="#D4DCD0"/>
+    <text x="22" y="38" fill="#1F8F6A" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="14" font-weight="700">PLAN</text>
+    <text x="22" y="70" fill="#101820" font-family="Arial, sans-serif" font-size="22" font-weight="700">Safe batches</text>
+    <text x="22" y="98" fill="#58635C" font-family="Arial, sans-serif" font-size="14">Stop, repair, govern</text>
+  </g>
+  <path d="M948 384H1016" stroke="#DDA63A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1016 384L1002 372M1016 384L1002 396" stroke="#DDA63A" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(1040 322)">
+    <rect width="88" height="124" rx="8" fill="#1F8F6A"/>
+    <text x="22" y="42" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="14" font-weight="700">GOAL</text>
+    <text x="22" y="76" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">Run</text>
+    <text x="22" y="100" fill="#D8F3E9" font-family="Arial, sans-serif" font-size="13">Verify</text>
+  </g>
+  <g transform="translate(146 496)">
+    <rect width="982" height="72" rx="8" fill="#101820"/>
+    <text x="22" y="45" fill="#F7F8F5" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18">/goal Resolve confirmed debt in priority order. Verify every item. Pause on secrets, production data, or destructive scope.</text>
+  </g>
+</svg>

@@ -3,73 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>更新日志 · 债序天工 Wiki</title>
-    <meta name="description" content="债序天工 Skill Wiki 的更新日志。" />
-    <meta name="theme-color" content="#f5f8ff" />
+    <title>更新日志 · 债序天工</title>
+    <meta name="description" content="债序天工 Skill、README、文档站和发行包的更新记录。" />
+    <meta name="theme-color" content="#f6f8fb" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./wiki.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="./index.html">债序天工 Wiki</a>
+      <a class="brand" href="./index.html" aria-label="债序天工首页">
+        <img src="./assets/readme/debt-to-goal-logo.png" alt="" />
+        <span>债序天工</span>
+      </a>
       <nav class="site-nav" aria-label="主导航">
         <a href="./index.html">首页</a>
-        <a href="./changelog.html" aria-current="page">更新日志</a>
-        <a href="./index.html#commands">指令</a>
-        <a href="./index.html#priority">等级</a>
+        <a href="./index.html#commands">命令</a>
         <a href="./index.html#install">安装</a>
+        <a href="./index.html#adapters">适配</a>
+        <a href="./changelog.html" aria-current="page">更新日志</a>
       </nav>
       <a class="github-link" href="https://github.com/rfdiosuao/enterprise-debt-remediation-skill" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
-    <main class="doc-shell">
-      <article class="doc-card">
-        <h1>📝 更新日志 | Changelog</h1>
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Changelog</p>
+        <h1>更新日志</h1>
+        <p class="lead">记录 Skill 契约、适配器、README、文档站、发行包和发布安全默认值的变化。</p>
+      </section>
 
-        <blockquote class="status-block">
-          <p><strong>用途</strong>: 记录 Skill、Wiki、发行包和平台适配变化</p>
-          <p><strong>规则</strong>: 每次改动都写清楚“改了什么”和“为什么改”</p>
-        </blockquote>
+      <section class="section-band timeline">
+        <article class="log-item">
+          <p class="log-date">2026-07-06</p>
+          <h2>`/hz goal` 与文档站升级</h2>
+          <ul>
+            <li>`hz` 新增 `goal` 子模式：先审计债务，再生成解决债务的 Codex `/goal`。</li>
+            <li>核心契约和 Claude Code、OpenClaw、Hermes 适配器同步支持 `audit|plan|fix|goal`。</li>
+            <li>README 和中文 README 增加品牌图、Star Growth、当前 `dist` 下载入口和可复现打包脚本。</li>
+            <li>文档站首页改为正式项目页，首屏展示 logo、四个子模式、Star 增长和安装路径。</li>
+            <li>`luming-preview` 在公网绑定时要求显式设置 `LOOM_ADMIN_PASSWORD`，避免默认后台密码进入公开环境。</li>
+          </ul>
+        </article>
 
-        <hr />
+        <article class="log-item">
+          <p class="log-date">2026-05-20</p>
+          <h2>Wiki 改成文档型首页</h2>
+          <ul>
+            <li>首页改成文档型 Wiki 结构，包含定位、快速开始、表格和参考入口。</li>
+            <li>新增独立更新日志页，方便后续记录 Skill 变化。</li>
+            <li>保留 GitHub Pages 静态发布方式，不引入额外构建流程。</li>
+          </ul>
+        </article>
 
-        <section class="timeline">
-          <article class="log-item">
-            <p class="log-date">2026-05-20</p>
-            <h2>Wiki 改成文档型首页</h2>
-            <ul>
-              <li>将首页改成文档型 Wiki 结构：标题、状态块、快速开始、表格和参考入口。</li>
-              <li>新增独立更新日志页，方便后续记录 Skill 变化。</li>
-              <li>保留 GitHub Pages 静态发布方式，不引入额外构建流程。</li>
-            </ul>
-          </article>
+        <article class="log-item">
+          <p class="log-date">2026-05-20</p>
+          <h2>新增 Windows UTF-8 预检</h2>
+          <ul>
+            <li>核心契约加入“先识别系统，再决定编码”的运行前置。</li>
+            <li>新增 `bootstrap_windows_utf8.ps1`，用于 Windows 会话级 UTF-8 初始化。</li>
+            <li>同步重打 `.skill` 发行包。</li>
+          </ul>
+        </article>
 
-          <article class="log-item">
-            <p class="log-date">2026-05-20</p>
-            <h2>新增 Windows UTF-8 预检</h2>
-            <ul>
-              <li>在核心契约中加入“先识别系统，再决定编码”的运行前置。</li>
-              <li>新增 <code>bootstrap_windows_utf8.ps1</code>，用于 Windows 会话级 UTF-8 初始化。</li>
-              <li>同步重打 <code>.skill</code> 发行包。</li>
-            </ul>
-          </article>
-
-          <article class="log-item">
-            <p class="log-date">2026-05-20</p>
-            <h2>首个公开版本</h2>
-            <ul>
-              <li>发布 <code>enterprise-debt-remediation</code> 完整 Skill。</li>
-              <li>发布 <code>hz</code> 极简入口，支持 <code>/hz audit</code>、<code>/hz plan</code>、<code>/hz fix</code>。</li>
-              <li>补齐 Codex、Claude Code、OpenClaw、Hermes 适配说明。</li>
-            </ul>
-          </article>
-        </section>
-      </article>
+        <article class="log-item">
+          <p class="log-date">2026-05-20</p>
+          <h2>首个公开版本</h2>
+          <ul>
+            <li>发布 `enterprise-debt-remediation` 完整 Skill。</li>
+            <li>发布 `hz` 极简入口，支持 `/hz audit`、`/hz plan`、`/hz fix`。</li>
+            <li>补齐 Codex、Claude Code、OpenClaw、Hermes 适配说明。</li>
+          </ul>
+        </article>
+      </section>
     </main>
   </body>
 </html>

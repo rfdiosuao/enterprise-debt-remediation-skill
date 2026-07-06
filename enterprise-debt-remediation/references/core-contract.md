@@ -1,10 +1,10 @@
 # 核心契约
 
-这份契约是跨平台核心。Codex、Claude Code、OpenClaw、Hermes 等入口只负责把用户请求转成这里的三个模式。
+这份契约是跨平台核心。Codex、Claude Code、OpenClaw、Hermes 等入口只负责把用户请求转成这里的模式。
 
 ## 环境预检
 
-在 audit、plan、fix 之前先检测当前系统。
+在 audit、plan、fix、goal 之前先检测当前系统。
 
 - 先判断宿主是否为 Windows。
 - 如果是 Windows，先执行 `scripts/bootstrap_windows_utf8.ps1`，再读取中文文件、跑验证脚本或导出报告。
@@ -13,7 +13,7 @@
 
 ## 输入
 
-- `mode`：`audit`、`plan`、`fix`，为空时默认 `audit`
+- `mode`：`audit`、`plan`、`fix`、`goal`，为空时默认 `audit`
 - `scope`：仓库、目录、服务、页面、模块、功能链路或 issue
 - `constraints`：不可改动范围、时间预算、发布窗口、合规要求
 - `evidence`：日志、截图、测试结果、报错、代码路径、用户反馈
@@ -32,6 +32,10 @@
 
 只修 P0/P1 或用户明确点名的问题。先做最小安全改动，再补测试、日志或文档。遇到大范围重构、证据不足、行为不确定、可能破坏发布时，先停止并说明 blocker。
 
+### goal
+
+先审计请求范围，再把发现整理成优先级债务台账和路线图，最后生成可直接复制的 Codex `/goal`。`goal` 模式不开始修复，除非用户明确要求执行生成的 goal。
+
 ## 输出
 
 `/hz` 快速入口只返回三块：
@@ -45,6 +49,26 @@
 - 债务台账
 - 整改路线图
 - 质量门禁
+
+## Goal Mode Extension
+
+Entry points may pass `mode: goal` when the user asks to find project debt and generate a Codex `/goal` to resolve it.
+
+`goal` mode is audit plus plan plus goal drafting. It must not start remediation work unless the user explicitly asks to execute the generated goal.
+
+Required behavior:
+
+- Audit the requested scope before drafting the goal.
+- Build a prioritized debt ledger with confirmed and pending-evidence items.
+- Treat "all debt" as all evidence-backed findings in scope; list uninspected areas as blockers.
+- Draft a copy-ready `/goal` with Outcome, Verification, Constraints, Boundaries, Iteration policy, Stop when, and Pause if.
+- The generated goal should resolve the ledger in P0/P1/P2/P3 order, keep unrelated systems unchanged, update evidence as items are fixed, and pause for credentials, production data, destructive operations, unclear ownership, compliance/legal decisions, or scope expansion.
+
+`goal` output:
+
+- `findings`: condensed debt ledger and evidence gaps
+- `remediation_goal`: the copy-ready `/goal`
+- `blockers`: missing evidence, unsafe scope, or human decisions required
 
 ## 不变量
 
