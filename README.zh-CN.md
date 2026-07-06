@@ -21,7 +21,7 @@
 仓库内包含两个入口：
 
 - `enterprise-debt-remediation`：完整审计与整改流程。
-- `hz`：极简快捷入口，支持 `/hz audit`、`/hz plan`、`/hz fix`。
+- `hz`：极简快捷入口，支持 `/hz audit`、`/hz plan`、`/hz fix`、`/hz goal`。
 
 ## 核心定位
 
@@ -53,13 +53,19 @@
 /hz fix 只处理 P0/P1 债务，优先做最小安全修复，并说明验证方式。
 ```
 
+生成可执行 Goal：
+
+```text
+/hz goal 当前项目。先找出当前范围内有证据支撑的债务，再生成一个解决这些债务的 Codex /goal。
+```
+
 完整模式：
 
 ```text
 使用 $enterprise-debt-remediation 全面审视当前项目债务，并输出债务台账、整改路线图、质量门禁。
 ```
 
-## 三个子命令
+## 四个子命令
 
 ### `/hz audit`
 
@@ -98,6 +104,19 @@
 - 用户明确指定的问题
 
 如果证据不足、范围过大、行为不确定，`fix` 模式应该先停止并说明阻塞点。
+
+### `/hz goal`
+
+用于把“先找债，再生成解决所有债的 goal”变成可复制的 Codex `/goal`。
+
+输出重点：
+
+- 先审计请求范围内的债务
+- 把债务整理成 P0/P1/P2/P3 优先级台账
+- 用 `remediation_goal` 给出可直接复制的 `/goal`
+- 不直接开始修复，除非用户明确要求执行生成的 goal
+
+这里的“所有债”指当前 scope 内有证据支撑的所有债务；未检查区域和证据不足的问题会作为 blocker 或 `pending-evidence` 说明。
 
 ## 债务优先级
 
@@ -138,6 +157,16 @@
 ## findings
 
 ## next_step
+
+## blockers
+```
+
+`/hz goal` 输出：
+
+```md
+## findings
+
+## remediation_goal
 
 ## blockers
 ```

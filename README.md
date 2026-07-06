@@ -19,21 +19,23 @@ Enterprise Debt Remediation is a platform-neutral skill for auditing and paying 
 It ships with two Codex skills:
 
 - `enterprise-debt-remediation`: the full audit and remediation workflow.
-- `hz`: a short `/hz` style entrypoint with three modes.
+- `hz`: a short `/hz` style entrypoint with four modes, including goal drafting.
 
 ## Modes
 
-`/hz` has only three subcommands:
+`/hz` supports four subcommands:
 
 ```text
 /hz audit [scope]
 /hz plan [scope]
 /hz fix [scope]
+/hz goal [scope]
 ```
 
 - `audit`: find the highest-value debt with evidence, impact, priority, and validation.
 - `plan`: turn findings into a short remediation route.
 - `fix`: change only P0/P1 items or explicitly named issues.
+- `goal`: audit the scope first, then generate a copy-ready Codex `/goal` for resolving the prioritized debt ledger.
 
 ## Install For Codex
 

@@ -40,7 +40,7 @@
         <blockquote class="status-block">
           <p><strong>版本</strong>: v0.1.0</p>
           <p><strong>状态</strong>: 已开源 · GitHub Pages 已上线</p>
-          <p><strong>入口</strong>: <code>/hz audit</code> · <code>/hz plan</code> · <code>/hz fix</code></p>
+          <p><strong>入口</strong>: <code>/hz audit</code> · <code>/hz plan</code> · <code>/hz fix</code> · <code>/hz goal</code></p>
           <p><strong>适配</strong>: Codex · Claude Code · OpenClaw · Hermes</p>
         </blockquote>
 
@@ -75,6 +75,11 @@
               <span>还债</span>
               <code>/hz fix</code>
               <small>优先修 P0/P1，避免大范围误伤。</small>
+            </button>
+            <button class="command-card" data-copy="/hz goal 当前项目。先找出当前范围内有证据支撑的债务，再生成一个解决这些债务的 Codex /goal。">
+              <span>成约</span>
+              <code>/hz goal</code>
+              <small>先查债，再生成可执行的还债 goal。</small>
             </button>
           </div>
           <p class="hint" id="copy-status">点击任意指令卡片可复制命令。</p>
@@ -172,7 +177,7 @@ Copy-Item -Recurse -Force .\hz "$skills\hz"</code></pre>
           <h2>🧩 平台适配</h2>
           <p>
             核心契约保持平台中立。Codex、Claude Code、OpenClaw、Hermes 只负责把入口转成
-            <code>audit</code>、<code>plan</code>、<code>fix</code> 三种模式。
+            <code>audit</code>、<code>plan</code>、<code>fix</code>、<code>goal</code> 四种模式。
           </p>
           <p>
             Windows 环境会先做 UTF-8 会话预检，再读取中文文件、运行验证脚本或输出报告。

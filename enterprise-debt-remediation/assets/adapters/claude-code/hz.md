@@ -1,13 +1,13 @@
 ---
-description: Run enterprise debt workflow. Usage: /hz [audit|plan|fix] [scope]
-argument-hint: [audit|plan|fix] [scope]
+description: Run enterprise debt workflow. Usage: /hz [audit|plan|fix|goal] [scope]
+argument-hint: [audit|plan|fix|goal] [scope]
 ---
 
 Use the HZ core contract from `enterprise-debt-remediation/references/core-contract.md`.
 
 Interpret `$ARGUMENTS` as:
 
-- mode: `audit`, `plan`, or `fix`; default to `audit`
+- mode: `audit`, `plan`, `fix`, or `goal`; default to `audit`
 - scope: everything after mode
 
 For `audit`, scan for the highest-value project debt with evidence, impact, priority, and validation.
@@ -16,8 +16,16 @@ For `plan`, turn findings into a short remediation plan with order, owner, and v
 
 For `fix`, change only P0/P1 items or explicitly named issues. Stop if scope, evidence, or safety is unclear.
 
-Return only:
+For `goal`, audit the requested scope first, then output a copy-ready Codex `/goal` for resolving the prioritized debt ledger. Do not start remediation unless the user explicitly asks to execute the generated goal.
+
+For `audit`, `plan`, and `fix`, return only:
 
 - findings
 - next_step
+- blockers
+
+For `goal`, return only:
+
+- findings
+- remediation_goal
 - blockers
