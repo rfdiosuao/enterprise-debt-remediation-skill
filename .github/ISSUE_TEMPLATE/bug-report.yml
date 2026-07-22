@@ -1,0 +1,45 @@
+name: Bug report
+description: Report reproducible behavior in a skill, validator, adapter, or package
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - enterprise-debt-remediation skill
+        - hz skill
+        - validator
+        - platform adapter
+        - package / documentation site
+        - other
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Platform, client version, OS, Python version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide the smallest safe input and exact steps that reproduce the problem
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, customer data, private code, and internal URLs
+          required: true
