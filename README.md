@@ -142,3 +142,9 @@ scripts/
 ## License
 
 MIT
+
+## Contributing and Security
+
+- Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before changing a skill contract, validator, or adapter.
+- Report vulnerabilities privately according to [`SECURITY.md`](SECURITY.md).
+- Use the structured [issue templates](https://github.com/rfdiosuao/enterprise-debt-remediation-skill/issues/new/choose) for reproducible bugs.
